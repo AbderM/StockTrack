@@ -4,8 +4,31 @@
 
 {% block body %}
 
-
-    <div class="example-wrapper">
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="card shadow-lg" style="width: 30rem;">
+        <div class="card-body">
+            <h1 class="card-title text-center">Ajouter un produit</h1>
+            {{ form_start(formProduit, {'attr': {'class': 'form-group'}}) }}
+                <div class="mb-3">
+                    {{ form_row(formProduit.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(formProduit.description, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(formProduit.quantity, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(formProduit.price, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary">Ajouter</button>
+                </div>
+            {{ form_end(formProduit) }}
+        </div>
+    </div>
+</div>    
+    {#<div class="example-wrapper">
         <h1> Ajouter un nouveau produit </h1>
 
         {{ form_start(formProduit)}}
@@ -16,6 +39,6 @@
             {{ form_row(formProduit.price)}}
 
         {{ form_end(formProduit)}}
-        
-    </div>
+
+    </div>#}
 {% endblock %}
